@@ -1,0 +1,17 @@
+{
+  "session_id": 10,
+  "input_mode": "gesture",
+  "duration_seconds": 0.0,
+  "completed": false,
+  "final_score": 0,
+  "total_frames": 1936,
+  "fired_commands": 164,
+  "stable_prediction_rate": 0.296028880866426,
+  "false_trigger_rate_per_min": 24000000.0,
+  "avg_latency_ms": 29.791154398405848,
+  "avg_fps": 6.178151037137339,
+  "meets_accuracy_target": false,
+  "meets_false_trigger_target": false,
+  "meets_latency_target": true,
+  "meets_fps_target": false
+}

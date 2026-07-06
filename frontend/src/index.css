@@ -1,0 +1,108 @@
+:root {
+  color-scheme: dark;
+  font-family: "Segoe UI", Inter, system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #24314f, #0c0e14 60%);
+  color: #eef3ff;
+  min-height: 100vh;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}
+
+h1 {
+  margin-bottom: 4px;
+}
+
+h2 {
+  margin-top: 40px;
+  margin-bottom: 12px;
+}
+
+.muted {
+  color: #aeb8cc;
+}
+
+button {
+  background: #3a5bc7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+button:hover {
+  background: #4a6be0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.card-label {
+  color: #aeb8cc;
+  font-size: 13px;
+}
+
+.card-value {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 6px;
+}
+
+.card.pass .card-value {
+  color: #65f0aa;
+}
+
+.card.fail .card-value {
+  color: #ff8a8a;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+th {
+  color: #aeb8cc;
+  font-weight: 600;
+}
+
+tr.selected td {
+  background: rgba(58, 91, 199, 0.2);
+}
+
+code {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 13px;
+}

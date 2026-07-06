@@ -1,0 +1,45 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+myenv/
+
+# Session data — logs and recordings shouldn't be committed
+data/logs/*.db
+data/logs/*.sqlite3
+data/recordings/*
+!data/logs/.gitkeep
+!data/recordings/.gitkeep
+
+# Editors
+.vscode/*
+!.vscode/settings.json
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env / secrets
+.env
+
+# Distribution
+build/
+dist/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Frontend (React + Vite)
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/

@@ -1,0 +1,13 @@
+opencv-python
+mediapipe==0.10.14
+pygame
+numpy
+pandas
+matplotlib
+
+# dev / testing
+pytest
+
+# backend API (serves session/evaluation data to the React frontend)
+fastapi==0.111.0
+uvicorn[standard]==0.30.1

@@ -94,16 +94,6 @@ npm run dev
 ```
 Open **[http://localhost:5173/](http://localhost:5173/)** in your web browser.
 
-### C. (Optional) Run Desktop Pygame Version
-If you want to play the native desktop Pygame version instead of the browser version:
-```bash
-# Wires up webcam gesture input with the desktop Pygame window
-python main.py --input gesture
-
-# Wires up keyboard fallback controls (Arrow Keys + Space)
-python main.py --input keyboard
-```
-
 ---
 
 ## 4. In-Browser Python WebAssembly Gesture Pipeline
@@ -132,7 +122,7 @@ When you load the Web Application on your browser:
 
 ## 6. Admin Terminal Database Management
 
-You **do not need to install SQLite**. SQLite is built into Python. To manage session records directly from your VS Code terminal, use the provided `db_admin.py` utility:
+To manage session records directly from your VS Code terminal, use the provided `db_admin.py` utility by enterning `scripts/` folder:
 
 * **List all logged sessions**:
   ```bash

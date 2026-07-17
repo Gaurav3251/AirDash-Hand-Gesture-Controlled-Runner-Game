@@ -16,7 +16,7 @@ import sqlite3
 from contextlib import closing
 from dataclasses import dataclass
 
-import config
+from . import config
 
 
 @dataclass
@@ -63,7 +63,13 @@ def evaluate_session(session_id=None, db_path=config.DB_PATH) -> EvaluationSumma
             raise ValueError(f"No session found with id {session_id}.")
 
         _, input_mode, start_time, end_time, completed, final_score = session_row
-        duration = (end_time or start_time) - start_time
+        if end_time is None:
+            max_ts_row = conn.execute("SELECT MAX(timestamp) FROM events WHERE session_id = ?", (session_id,)).fetchone()
+            if max_ts_row and max_ts_row[0] is not None:
+                end_time = max_ts_row[0]
+            else:
+                end_time = start_time
+        duration = max(end_time - start_time, 0.0)
 
         events = conn.execute(
             "SELECT predicted_gesture, confidence, action_fired, fps, latency_ms "
@@ -91,7 +97,7 @@ def evaluate_session(session_id=None, db_path=config.DB_PATH) -> EvaluationSumma
         e for e in fired_events
         if e[1] is not None and e[1] < config.MIN_CONFIDENCE_THRESHOLD
     ]
-    duration_minutes = max(duration / 60.0, 1e-6)
+    duration_minutes = max(duration / 60.0, 1.0 / 60.0)  # assume minimum 1 second to avoid division by zero/extreme values
     false_trigger_rate = len(false_triggers) / duration_minutes
 
     latencies = [e[4] for e in events if e[4] is not None]

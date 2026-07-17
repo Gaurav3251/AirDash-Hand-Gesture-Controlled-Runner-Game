@@ -12,7 +12,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 os.environ.setdefault("SDL_VIDEODRIVER", "dummy")
 os.environ.setdefault("SDL_AUDIODRIVER", "dummy")
 
-import config
+from src import config
 from src.feature_extractor import extract_features
 from src.gesture_classifier import classify
 from src.motion_gesture_detector import MotionGestureDetector

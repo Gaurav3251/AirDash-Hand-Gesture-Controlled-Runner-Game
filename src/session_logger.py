@@ -9,7 +9,7 @@ import sqlite3
 import time
 from contextlib import closing
 
-import config
+from . import config
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS sessions (
@@ -37,7 +37,9 @@ CREATE TABLE IF NOT EXISTS events (
 
 class SessionLogger:
     def __init__(self, db_path=config.DB_PATH):
-        os.makedirs(os.path.dirname(db_path), exist_ok=True)
+        db_dir = os.path.dirname(db_path)
+        if db_dir:
+            os.makedirs(db_dir, exist_ok=True)
         self.db_path = db_path
         self._init_schema()
         self.session_id = None

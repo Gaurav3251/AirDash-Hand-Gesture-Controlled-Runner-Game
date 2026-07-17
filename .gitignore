@@ -43,3 +43,8 @@ dist/
 frontend/node_modules/
 frontend/dist/
 frontend/.vite/
+
+# Local databases
+sessions.db
+*.db
+*.sqlite3

@@ -77,11 +77,11 @@ GAME_WINDOW_WIDTH = 800
 GAME_WINDOW_HEIGHT = 600
 GAME_FPS = 60
 LANE_COUNT = 3
-OBSTACLE_SPEED_START = 6
-OBSTACLE_SPEED_INCREMENT = 0.15  # per obstacle spawned, difficulty ramp
-OBSTACLE_SPAWN_INTERVAL_MS = 1100
-JUMP_DURATION_MS = 450
-DUCK_DURATION_MS = 550
+OBSTACLE_SPEED_START = 3.5  # Decreased from 6.0
+OBSTACLE_SPEED_INCREMENT = 0.05  # Decreased from 0.15
+OBSTACLE_SPAWN_INTERVAL_MS = 1500  # Increased from 1100
+JUMP_DURATION_MS = 600  # Increased from 450
+DUCK_DURATION_MS = 700  # Increased from 550
 
 # Lives
 INITIAL_LIVES = 3
@@ -116,7 +116,7 @@ DEFAULT_GESTURE_ACTION_MAP = {
 }
 
 # --- Logging / storage ---
-DB_PATH = "data/logs/sessions.db"
+DB_PATH = "sessions.db"  # DB path changed to root level sessions.db
 
 # --- Evaluation targets (MVP bar from the proposal) ---
 TARGET_ACCURACY = 0.85

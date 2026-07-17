@@ -10,35 +10,34 @@ It includes real-time session metric tracking, local SQLite persistence, and an 
 
 ```text
 AirDash/
-├── main.py                    # Pygame desktop entry point
-├── config.py                  # Tunable game & tracking constants
-├── db_admin.py                # CLI Database administrator for terminal DB management
 ├── backend/
-│   └── api.py                 # FastAPI REST API exposing database session logs
-├── frontend/                  # React + Vite dashboard & in-browser Canvas game
+│   └── api.py                  # FastAPI REST API exposing database session logs
+├── frontend/                   # React + Vite dashboard & in-browser Canvas game
 │   ├── index.html
 │   ├── package.json
-│   ├── public/                # Hand gesture illustrations & Wasm python script
-│   │   ├── gesture_classifier.py
-│   │   ├── peace_sign.jpg
-│   │   ├── pinch_gesture.jpg
-│   │   ├── thumbs_up.jpg
-│   │   ├── pointing_up.jpg
-│   │   └── closed_fist.jpg
-│   └── src/
-│       ├── App.jsx            # Main React SPA
-│       ├── index.css          # Cyberpunk dark style definitions
-│       ├── api.js             # Fetch wrappers for backend REST API
-│       ├── gameCanvas.js      # HTML5 Canvas 60 FPS Game Engine
-│       └── gestureClassifier.js # JavaScript features extractor (fallback)
-├── game/
-│   ├── entities.py            # Desktop sprite classes (Player, Obstacle, Star)
-│   └── game_app.py            # Desktop Pygame loop
-├── src/                       # Desktop helper scripts (Hand trackers, classifiers)
-│   ├── hand_tracker.py
-│   └── ...
-├── requirements.txt           # Python backend & Pygame dependencies
-└── .gitignore                 # Configured git ignore file
+│   ├── src/
+│   │   ├── App.jsx             # Main React SPA
+│   │   ├── index.css           # Cyberpunk dark style definitions
+│   │   ├── api.js              # Fetch wrappers for backend REST API
+│   │   ├── gameCanvas.js       # HTML5 Canvas 60 FPS Game Engine
+│   │   └── gesture_classifier.py # Python script compiled by Pyodide (Wasm)
+│   └── public/                 # Hand gesture illustrations & static assets
+│       ├── peace_sign.jpg
+│       ├── pinch_gesture.jpg
+│       ├── thumbs_up.jpg
+│       ├── pointing_up.jpg
+│       └── closed_fist.jpg
+├── scripts/
+│   └── db_admin.py             # CLI Database administrator for terminal DB management
+├── src/                        # Core backend database & logger package
+│   ├── __init__.py
+│   ├── config.py               # Tunable database and dev settings
+│   ├── session_logger.py       # SQLite logger for sessions and frame events
+│   └── evaluation_service.py   # Performance analytics compiler
+├── tests/                      # Automated pytest folder for gesture classifier
+│   └── test_classifier.py
+├── requirements.txt            # Python backend dependencies
+└── .gitignore                  # Configured git ignore file
 ```
 
 ---
